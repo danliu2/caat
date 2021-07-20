@@ -5,7 +5,7 @@ About the package name "rain": Don't be confused, it just come from the misspell
 
 
 ## Installation
-    Our codes relies on PyTorch, Numpy and Fairseq. Besides, we modified warp-transducer for CAAT loss calculation, if you have already installed it, you should uninstall it first, and reinstall the version in sub-dir warp-transducer as follows :
+Our codes relies on PyTorch, Numpy and Fairseq. Besides, we modified warp-transducer for CAAT loss calculation, if you have already installed it, you should uninstall it first, and reinstall the version in sub-dir warp-transducer as follows :
 ```bash
 cd warp_transducer
 mkdir build & cd build
