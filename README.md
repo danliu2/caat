@@ -1,11 +1,13 @@
 # RAIN Simultaneous Speech Translation
 This is the implementation of Cross Attention Augmented Transducer (CAAT). If you found bugs or other questions, fill free to discuss with us by issues or mail to danliu@mail.ustc.edu.cn.
 
-About the package name "rain": Don't be confused, it just come from the misspelling of "TRAIN".
+## About the package name "rain"
+ Don't be confused, it just come from the misspelling of "TRAIN".
 
 
 ## Installation
 Our codes relies on PyTorch, Numpy and Fairseq. Besides, we modified warp-transducer for CAAT loss calculation, if you have already installed it, you should uninstall it first, and reinstall the version in sub-dir warp-transducer as follows :
+
 ```bash
 cd warp_transducer
 mkdir build & cd build
@@ -18,6 +20,7 @@ pip install -e .
 ## Experiments on MuST-C speech-to-text simultaneous translation
 
 Preprocessing training data: set MUSTC_DIR to the raw MuST-C dataset path,  DATA_DIR to the path for processed data:
+
 ```bash
 bash scripts/preporcess_mustc.sh $MUSTC_DIR $DATA_DIR
 ```
