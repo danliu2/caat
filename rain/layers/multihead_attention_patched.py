@@ -20,7 +20,7 @@ from torch.nn import Parameter
 from typing import Dict, Optional, Tuple
 
 
-@with_incremental_state
+
 class MultiheadAttentionPatched(MultiheadAttention):
     """
         small modify on padding_mask: during inference, set padding to -1e10 instead of -inf, for CAAT decoding
