@@ -1,8 +1,8 @@
 # RAIN Simultaneous Speech Translation
 This is the implementation of Cross Attention Augmented Transducer (CAAT). If you found bugs or other questions, fill free to discuss with us by issues or mail to danliu@mail.ustc.edu.cn.
 
-## Origin of the package name "rain"
- Don't be confused, it just a typo on "TRAIN".
+<!-- ## Origin of the package name "rain"
+ Don't be confused, it just a typo on "TRAIN". -->
 
 
 ## Installation
@@ -136,11 +136,14 @@ Train final CAAT simultanslation model
 			--fp16 --min-loss-scale 1e-6
 ```
 ### Evaluation
-    To evaluate with SimulEval, first we extract test dataset as SimulEval like:
+To evaluate with SimulEval, first we extract test dataset as SimulEval like:
+
     ```bash
     python -m scripts.audio_test --prefix test-COMMON  $MUSTC_DIR/en-de/data $DATA_DIR/test
     ```
-    Evaluate with SimulEval, note parameter --step-read-block should be "step*downsample_size/main_context", and downsample_size is set to 4 (two convolutions with strides 2) in our experimets:
+
+Evaluate with SimulEval, note parameter --step-read-block should be "step*downsample_size/main_context", and downsample_size is set to 4 (two convolutions with strides 2) in our experimets:
+
     ```bash
     step_read_block=4
     simuleval --agent ./rain/simul/speech_fullytransducer_agent.py --timeout 100  \
@@ -152,3 +155,15 @@ Train final CAAT simultanslation model
 		--intra-beam 5  --inter-beam 1 --decoder-step-read 256 --eager \
 			--step-read-block $step_read_block
     ```
+
+## Citation
+If the paper or the code helps you, please cite the paper in the following format :
+```
+@inproceedings{liu2021cross,
+  title={Cross Attention Augmented Transducer Networks for Simultaneous Translation},
+  author={Liu, Dan and Du, Mengge and Li, Xiaoxi and Li, Ya and Chen, Enhong},
+  booktitle={Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing},
+  pages={39--55},
+  year={2021}
+}
+```
