@@ -117,6 +117,19 @@ class SNMTTask(LegacyFairseqTask):
         self.audio_transform_test = audio_encoder.build_audio_transforms(
             audio_cfg_path, transform_names=["whiten"]
         )
+        
+    def train_step(
+        self, sample, model, criterion, optimizer, update_num, ignore_grad=False
+    ):
+        if hasattr(model, 'get_ntokens'):
+            sample["ntokens"]= model.get_ntokens(sample)
+        return super().train_step(sample, model, criterion, optimizer, update_num, ignore_grad)
+    
+    def valid_step(self, sample, model, criterion):
+        if hasattr(model, 'get_ntokens'):
+            sample["ntokens"]= model.get_ntokens(sample)
+        return super().valid_step(sample, model, criterion)
+         
 
     @classmethod
     def add_args(cls, parser):
