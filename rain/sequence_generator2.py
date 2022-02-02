@@ -10,6 +10,10 @@ from fairseq.models import FairseqIncrementalDecoder
 from fairseq.sequence_generator import SequenceGenerator, EnsembleModel
 
 class SequenceGenerator2(SequenceGenerator):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.no_repeat_ngram_size = 0
+        
     def _generate(
         self,
         sample: Dict[str, Dict[str, Tensor]],
