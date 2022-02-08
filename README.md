@@ -152,7 +152,8 @@ Evaluate with SimulEval, note parameter --step-read-block should be "step*downsa
 		--source $DATA_DIR/test/tst-COMMON.list --target $DATA_DIR/test/tst-COMMON.de \
 		--data-type speech --task s2s --model-path $modelfile \
 		--output $outdir --port $port --timeout 100 \
-		--intra-beam 5  --inter-beam 1 --decoder-step-read 256 --eager \
+		-max-len-a 0.043 --len-scale 0.7 --len-penalty 0 --max-len-b -5 \
+                --intra-beam 5  --inter-beam 1 --decoder-step-read 256 --eager \
 			--step-read-block $step_read_block
     ```
 
