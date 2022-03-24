@@ -1,5 +1,5 @@
 # RAIN Simultaneous Speech Translation
-This is the implementation of Cross Attention Augmented Transducer (CAAT). If you found bugs or other questions, fill free to discuss with us by issues or mail to danliu@mail.ustc.edu.cn.
+This is the implementation of Cross Attention Augmented Transducer (CAAT). If you found bugs or other questions, feel free to discuss with us by issues or mail to danliu@mail.ustc.edu.cn.
 
 <!-- ## Origin of the package name "rain"
  Don't be confused, it just a typo on "TRAIN". -->
